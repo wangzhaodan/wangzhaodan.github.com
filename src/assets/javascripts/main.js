@@ -1,6 +1,6 @@
 $(function () {
 
-    var index, length, saying = [
+    var  saying = [
         '善良是一种智慧，是一种远见，一种自信，一种精神力量，是一种文化，一种快乐',
 
         '说一遍是陈述，说两遍是反复，说三遍是排比，反反复复说个没完是在开会',
@@ -92,9 +92,42 @@ $(function () {
         '不敢生气的是懦夫，不去生气的才是智者'
     ];
 
-    length = saying.length;
-    index = Math.floor(Math.random() * length);
+    function sayingShow( saying , className){
 
-    $('.small-title').text(saying[index]);
+
+        // 做数据判断类型
+        saying=saying||['welcome to my home!'];
+        className=className|| 'small-title';
+
+        var length = saying.length;
+        var index = Math.floor(Math.random() * length);
+
+        $('.'+ className ).text(saying[index]);
+
+    }
+    sayingShow(saying,'small-title');
+    //sayingShow(saying);
+    //sayingShow();
+
+
+
+
+    var author = function () { console.log("author"); };
+    var books = function () { console.log("books"); };
+    var viewBook = function (bookId) {
+        console.log("viewBook: bookId is populated: " + bookId);
+    };
+
+    var routes = {
+        '/author': author,
+        '/books': [books, function() {
+            console.log("An inline route handler.");
+        }],
+        '/books/view/:bookId': viewBook
+    };
+    var router = Router(routes);
+    router.init();
+
+
 
 });
