@@ -1,0 +1,22 @@
+{
+  "name": "wzd",
+  "version": "0.0.0",
+  "authors": [
+    "wangzhaodan <822678230@qq.com>"
+  ],
+  "license": "none",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "tp.zepto": "*",
+    "tp": "*",
+    "tp.motion": "*",
+    "animate.css": "~3.4.0",
+    "director": "^1.2.8"
+  }
+}
